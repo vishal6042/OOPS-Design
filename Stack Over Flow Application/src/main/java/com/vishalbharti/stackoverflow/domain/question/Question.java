@@ -13,6 +13,11 @@ public class Question implements QuestionManager {
     private List<Answer> answers;
     private List<Comment> comments;
     private List<Photo> photos;
+    private QuestionStatus questionStatus;
+
+    public QuestionStatus getQuestionStatus() {
+        return questionStatus;
+    }
 
     public String getTitle() {
         return title;
@@ -42,8 +47,24 @@ public class Question implements QuestionManager {
         return photos;
     }
 
+    public void close() {
+        questionStatus = QuestionStatus.CLOSED;
+    }
+
+    public void delete() {
+        questionStatus = QuestionStatus.DELETED;
+        this.title = null;
+        this.body = null;
+        this.tags = null;
+        this.createTime = 0;
+        this.answers = null;
+        this.comments = null;
+        this.photos = null;
+    }
+
 
     private Question(QuestionBuilder builder) {
+        this.questionStatus = QuestionStatus.OPEN;
         this.title = builder.title;
         this.body = builder.body;
         this.tags = new ArrayList<Tag>(Arrays.asList(builder.tag));
