@@ -1,7 +1,7 @@
 package com.vishalbharti.stackoverflow.domain.account;
 
 import com.vishalbharti.stackoverflow.domain.Badge;
-import com.vishalbharti.stackoverflow.domain.Question;
+import com.vishalbharti.stackoverflow.domain.question.Question;
 
 import java.util.List;
 

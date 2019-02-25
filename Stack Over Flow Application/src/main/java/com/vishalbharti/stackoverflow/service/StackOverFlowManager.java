@@ -4,4 +4,5 @@ public interface StackOverFlowManager {
 
     boolean login(String email, String password);
 
+    boolean logout();
 }
