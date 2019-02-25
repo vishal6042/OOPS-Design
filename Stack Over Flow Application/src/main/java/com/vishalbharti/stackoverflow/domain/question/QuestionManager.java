@@ -6,6 +6,4 @@ public interface QuestionManager {
 
     void addAnswer(Answer answer);
 
-    void addComments(Comment... comments);
-
 }

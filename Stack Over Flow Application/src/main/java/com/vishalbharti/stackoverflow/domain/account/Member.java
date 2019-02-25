@@ -1,11 +1,11 @@
 package com.vishalbharti.stackoverflow.domain.account;
 
 import com.vishalbharti.stackoverflow.domain.Badge;
-import com.vishalbharti.stackoverflow.domain.question.Question;
+import com.vishalbharti.stackoverflow.domain.question.*;
 
 import java.util.List;
 
-public class Member {
+public class Member implements QuestionListener {
 
     private Account account;
     private int reputation;
@@ -35,11 +35,27 @@ public class Member {
         this.badgeList = badgeList;
     }
 
-    public void createQuestion(Question question) {
+    public int createQuestion(Question question) {
+        return 0;
+    }
+
+    public void editQuestion(int questionId) {
 
     }
 
-    public void editQuestion(Question question) {
+    public void notifyForAnswer(Answer answer) {
+
+    }
+
+    public void notifyForComment(Comment... comment) {
+
+    }
+
+    public void notifyForVote(String message, int voteCount, boolean isUpVoted) {
+
+    }
+
+    public void notifyForStatus(String message, QuestionStatus status) {
 
     }
 }
