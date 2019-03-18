@@ -1,5 +1,7 @@
 package com.vishalbharti.stackoverflow.domain;
 
+import java.util.Objects;
+
 public class Address {
     private String streetNumber;
     private String houseNumber;
@@ -66,5 +68,32 @@ public class Address {
 
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
+    }
+
+    public Address(String streetNumber, String houseNumber, String city, String state, String country, String zipCode) {
+        this.streetNumber = streetNumber;
+        this.houseNumber = houseNumber;
+        this.city = city;
+        this.state = state;
+        this.country = country;
+        this.zipCode = zipCode;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Address address = (Address) o;
+        return Objects.equals(streetNumber, address.streetNumber) &&
+                Objects.equals(houseNumber, address.houseNumber) &&
+                Objects.equals(city, address.city) &&
+                Objects.equals(state, address.state) &&
+                Objects.equals(country, address.country) &&
+                Objects.equals(zipCode, address.zipCode);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(streetNumber, houseNumber, city, state, country, zipCode);
     }
 }
