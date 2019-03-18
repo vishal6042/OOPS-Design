@@ -2,7 +2,7 @@ package com.vishalbharti.step.datebuilder;
 
 public class Main {
     public static void main(String[] args) {
-        String date = new SimpleDateBuilder()
+        String date = new SimpleDateBuilder().builder()
                 .addDate("18")
                 .addMonth("12")
                 .addYear("2019")

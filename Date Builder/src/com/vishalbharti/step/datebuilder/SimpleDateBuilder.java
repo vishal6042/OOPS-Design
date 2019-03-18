@@ -3,6 +3,10 @@ package com.vishalbharti.step.datebuilder;
 public class SimpleDateBuilder implements MonthBuilder, DateBuilder, YearBuilder, SeparatorBuilder, CompleteBuilder {
     private StringBuilder mDate = new StringBuilder();
 
+    public DateBuilder builder() {
+        return this;
+    }
+
     @Override
     public String build() {
         return mDate.toString();
